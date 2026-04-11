@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Yılmazlar Nakliye | Şehirler Arası & Tır Nakliye Firması</title>
+    <meta name="description" content="Yılmazlar Nakliye ile güvenli, hızlı ve ekonomik şehirler arası nakliye & tır nakliye hizmetleri. Yeni numara: 0531 102 07 84">
+    <meta name="author" content="Yılmazlar Nakliye">
+    <meta name="theme-color" content="#0b2b4a">
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="Yılmazlar Nakliye | Şehirler Arası & Tır Nakliye">
+    <meta property="og:description" content="Tır filosu ve profesyonel ekiple şehirler arası yük taşımacılığı. Hemen teklif alın!">
+    <meta property="og:type" content="website">
+    
+    <!-- Font Awesome 6 (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: modern & dinamik -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS (Animate on Scroll) Hafif kütüphane - wow hissi -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --deep-navy: #071b2f;      /* koyu prestij */
+            --dynamic-orange: #f15a24;  /* canlı turuncu (aksans) */
+            --electric-blue: #0077b6;
+            --bright-accent: #ffb703;
+            --light-bg: #f4f7fc;
+            --pure-white: #ffffff;
+            --dark-text: #121826;
+            --gray-text: #4a5568;
+            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-lg: 0 10px 30px -10px rgba(0, 0, 0, 0.15);
+            --transition-smooth: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            --gradient-hero: linear-gradient(135deg, #071b2f 0%, #0a2a44 100%);
+            --gradient-orange: linear-gradient(115deg, #f15a24 0%, #ff7b3a 100%);
+            --gradient-blue-electric: linear-gradient(135deg, #0077b6, #0096d6);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--pure-white);
+            color: var(--dark-text);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .logo-font {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* ===== HEADER (premium glassmorphism) ===== */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(7, 27, 47, 0.85);
+            backdrop-filter: blur(12px);
+            z-index: 1100;
+            transition: var(--transition-smooth);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .header-scrolled {
+            background: rgba(7, 27, 47, 0.96);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+        .logo {
+            font-size: 1.9rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(120deg, #fff, #ffb84d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none;
+        }
+        .logo span {
+            background: var(--gradient-orange);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+        }
+        .desktop-nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .desktop-nav ul li a {
+            text-decoration: none;
+            color: #f0f4fa;
+            font-weight: 600;
+            transition: 0.2s;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            position: relative;
+        }
+        .desktop-nav ul li a:hover {
+            color: var(--bright-accent);
+        }
+        .mobile-nav-toggle {
+            display: none;
+            font-size: 1.8rem;
+            color: white;
+            cursor: pointer;
+            background: rgba(255,255,255,0.1);
+            border-radius: 40px;
+            padding: 8px 16px;
+        }
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 300px;
+            height: 100vh;
+            background: var(--deep-navy);
+            backdrop-filter: blur(20px);
+            z-index: 1200;
+            padding: 100px 30px;
+            transition: 0.4s;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.3);
+        }
+        .mobile-nav.active {
+            right: 0;
+        }
+        .mobile-nav ul li {
+            margin-bottom: 25px;
+            list-style: none;
+        }
+        .mobile-nav ul li a {
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .mobile-nav-close {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            font-size: 1.8rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* HERO BÖLÜMÜ - dinamik wow */
+        .hero {
+            min-height: 100vh;
+            background: var(--gradient-hero);
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.pexels.com/photos/2954911/pexels-photo-2954911.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;
+            opacity: 0.2;
+            mix-blend-mode: overlay;
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+        .hero h1 {
+            font-size: 4.2rem;
+            background: linear-gradient(to right, #fff, #ffbc6e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: rgba(255,255,245,0.9);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        .btn-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 14px 32px;
+            border-radius: 60px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1rem;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: var(--gradient-orange);
+            color: white;
+        }
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 30px -8px rgba(241,90,36,0.4);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--bright-accent);
+            color: var(--bright-accent);
+        }
+        .btn-outline:hover {
+            background: var(--bright-accent);
+            color: var(--deep-navy);
+            transform: translateY(-3px);
+        }
+
+        /* bölüm başlıkları */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+        .section-title h2 {
+            font-size: 2.7rem;
+            background: linear-gradient(125deg, var(--deep-navy), var(--electric-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+            position: relative;
+        }
+        .section-title h2:after {
+            content: '';
+            width: 70px;
+            height: 4px;
+            background: var(--gradient-orange);
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 4px;
+        }
+        
+        /* Hizmetler - Modern Kartlar (3D hover) */
+        .services {
+            background: var(--light-bg);
+            padding: 100px 0;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: white;
+            border-radius: 28px;
+            padding: 2rem 1.8rem;
+            transition: var(--transition-smooth);
+            box-shadow: 0 12px 28px -8px rgba(0,0,0,0.08);
+            text-align: center;
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.03);
+            cursor: pointer;
+        }
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-xl);
+        }
+        .service-icon {
+            font-size: 3rem;
+            background: var(--gradient-orange);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.2rem;
+        }
+        .service-card h3 {
+            font-size: 1.7rem;
+            margin-bottom: 1rem;
+            color: var(--deep-navy);
+        }
+        .service-card p {
+            color: var(--gray-text);
+            line-height: 1.5;
+        }
+        .service-tag {
+            margin-top: 1.4rem;
+            font-weight: 700;
+            color: var(--dynamic-orange);
+            display: inline-block;
+        }
+
+        /* Tır filosu özel bölüm */
+        .fleet-section {
+            background: linear-gradient(110deg, #fef9f0 0%, #ffffff 100%);
+            padding: 90px 0;
+        }
+        .fleet-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+        .fleet-text {
+            flex: 1;
+        }
+        .fleet-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .fleet-stats {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--dynamic-orange);
+        }
+        .fleet-img {
+            flex: 1;
+            border-radius: 38px;
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+        .fleet-img img {
+            width: 100%;
+            display: block;
+            transition: 0.5s;
+        }
+
+        /* Yorumlar (Google) */
+        .reviews {
+            background: var(--deep-navy);
+            color: white;
+        }
+        .reviews .section-title h2 {
+            background: linear-gradient(125deg, #fff, #ffbc6e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .review-item {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(5px);
+            padding: 1.8rem;
+            border-radius: 28px;
+            transition: 0.2s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .stars {
+            color: #FFD966;
+            margin-bottom: 1rem;
+        }
+        .review-text {
+            font-style: italic;
+            margin: 1rem 0;
+            line-height: 1.5;
+        }
+
+        /* Süreç adımları (animasyon) */
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        .step {
+            background: white;
+            border-radius: 2rem;
+            padding: 2rem;
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+        .step-number {
+            background: var(--gradient-orange);
+            width: 60px;
+            height: 60px;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            margin: 0 auto 1rem;
+        }
+
+        /* FAQ Akordiyon modern */
+        .faq {
+            background: var(--light-bg);
+        }
+        .faq-item {
+            background: white;
+            border-radius: 28px;
+            margin-bottom: 1.2rem;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+        .faq-question {
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 1.2rem;
+            background: white;
+        }
+        .faq-answer {
+            max-height: 0;
+            padding: 0 2rem;
+            overflow: hidden;
+            transition: 0.4s ease;
+            color: var(--gray-text);
+        }
+        .faq-answer.active {
+            padding: 0 2rem 1.8rem 2rem;
+            max-height: 260px;
+        }
+
+        /* İletişim ve footer */
+        .contact {
+            background: var(--deep-navy);
+            padding: 80px 0;
+            text-align: center;
+        }
+        .contact h2 {
+            color: white;
+        }
+        .contact-row {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+        .contact-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 2rem;
+            padding: 1.8rem 2rem;
+            width: 220px;
+            backdrop-filter: blur(8px);
+            transition: 0.2s;
+        }
+        .contact-card i {
+            font-size: 2.2rem;
+            color: var(--bright-accent);
+            margin-bottom: 1rem;
+        }
+        footer {
+            background: #030e18;
+            padding: 40px 0;
+            text-align: center;
+            color: #aaa;
+        }
+
+        /* floating butonlar + whatsapp tooltip */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1050;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .float-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 60px;
+            background: #25D366;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            transition: 0.2s;
+            text-decoration: none;
+        }
+        .float-btn.call {
+            background: var(--gradient-blue-electric);
+        }
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 75px;
+            background: #075e54;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 40px;
+            white-space: nowrap;
+            font-weight: 600;
+            font-size: 0.85rem;
+            opacity: 1;
+            animation: pulse 1.8s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.8; transform: scale(1);}
+            50% { opacity: 1; transform: scale(1.02); background: #25D366;}
+            100% { opacity: 0.9; transform: scale(1);}
+        }
+
+        @media (max-width: 768px) {
+            .desktop-nav { display: none; }
+            .mobile-nav-toggle { display: flex; }
+            .hero h1 { font-size: 2.5rem; }
+            .container { padding: 0 20px; }
+            .section-title h2 { font-size: 2rem; }
+        }
+        @media (max-width: 550px) {
+            .btn-group { flex-direction: column; width: 100%;}
+            .btn { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<header id="mainHeader">
+    <div class="container header-container">
+        <a href="#home" class="logo">Yılmazlar <span>Nakliye</span></a>
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="#home">Ana Sayfa</a></li>
+                <li><a href="#services">Hizmetler</a></li>
+                <li><a href="#fleet">Tır Filosu</a></li>
+                <li><a href="#reviews">Yorumlar</a></li>
+                <li><a href="#process">Süreç</a></li>
+                <li><a href="#faq">SSS</a></li>
+                <li><a href="#contact">İletişim</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-nav-toggle" id="mobileNavToggle"><i class="fas fa-bars"></i></div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-close" id="mobileNavClose"><i class="fas fa-times"></i></div>
+        <ul>
+            <li><a href="#home">Ana Sayfa</a></li>
+            <li><a href="#services">Hizmetler</a></li>
+            <li><a href="#fleet">Tır Filosu</a></li>
+            <li><a href="#reviews">Yorumlar</a></li>
+            <li><a href="#process">Süreç</a></li>
+            <li><a href="#faq">SSS</a></li>
+            <li><a href="#contact">İletişim</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Hero Alanı -->
+<section class="hero" id="home">
+    <div class="container hero-content" data-aos="fade-up" data-aos-duration="1000">
+        <h1>Şehirler Arası & Tır Nakliye <br> Profesyonel Çözüm Ortağınız</h1>
+        <p>Yılmazlar Nakliye olarak, modern tır filosu ve uzman ekibimizle Türkiye’nin her noktasına güvenli, hızlı ve ekonomik taşımacılık hizmeti sunuyoruz.</p>
+        <div class="btn-group">
+            <a href="tel:05311020784" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Hemen Ara: 0531 102 07 84</a>
+            <a href="https://wa.me/905311020784?text=Merhaba,%20nakliye%20hizmetiniz%20hakkında%20bilgi%20almak%20istiyorum." class="btn btn-outline" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp'tan Yaz</a>
+        </div>
+    </div>
+</section>
+
+<!-- Hizmetler (Şehirler Arası & Tır Nakliye vurgulu) -->
+<section class="services" id="services">
+    <div class="container">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Gücümüzü Hissettiren Hizmetler</h2>
+        </div>
+        <div class="services-grid">
+            <div class="service-card" data-aos="zoom-in">
+                <div class="service-icon"><i class="fas fa-truck-ramp-box"></i></div>
+                <h3>Şehirler Arası Nakliye</h3>
+                <p>İstanbul, Ankara, İzmir ve 81 ile uzman taşımacılık. Eşyalarınız sigortalı, teslimat kapınızda.</p>
+                <span class="service-tag">Hızlı & Güvenli →</span>
+            </div>
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="service-icon"><i class="fas fa-trailer"></i></div>
+                <h3>Tır ile Komple Nakliye</h3>
+                <p>Kurumsal lojistik, tır kiralama, full yük taşımacılığı. 15+ tırlık filomuzla güçlüyüz.</p>
+                <span class="service-tag">Araç kapasite: 24 ton →</span>
+            </div>
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="service-icon"><i class="fas fa-warehouse"></i></div>
+                <h3>Parsiyel & Lojistik</h3>
+                <p>Küçük ve büyük parça eşya taşımacılığı, depolama ve dağıtım çözümleri.</p>
+                <span class="service-tag">Ekonomik & Esnek →</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tır filosu özel bölümü -->
+<section class="fleet-section" id="fleet">
+    <div class="container fleet-showcase">
+        <div class="fleet-text" data-aos="fade-right">
+            <h3>Yeni Nesil Tır Filosu <i class="fas fa-truck-fast" style="color:#f15a24"></i></h3>
+            <p>10’dan fazla modern çekici ve dorseli aracımızla her türlü yükü güvenle taşıyoruz. Nakliye sürecinizde GPS takip, profesyonel şoför kadrosu ve %100 müşteri memnuniyeti.</p>
+            <div class="fleet-stats">
+                <div class="stat"><div class="stat-number">15+</div><span>Aktif Tır</span></div>
+                <div class="stat"><div class="stat-number">7/24</div><span>Müşteri Desteği</span></div>
+                <div class="stat"><div class="stat-number">%100</div><span>Sigortalı Taşıma</span></div>
+            </div>
+            <a href="tel:05311020784" class="btn btn-primary"><i class="fas fa-headset"></i> Hemen Teklif Al</a>
+        </div>
+        <div class="fleet-img" data-aos="fade-left">
+            <img src="https://images.pexels.com/photos/2554697/pexels-photo-2554697.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Yılmazlar Nakliye Tır filosu">
+        </div>
+    </div>
+</section>
+
+<!-- Google Yorumları -->
+<section class="reviews" id="reviews">
+    <div class="container">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Müşterilerimiz Ne Diyor?</h2>
+        </div>
+        <div class="review-grid">
+            <div class="review-item" data-aos="flip-left">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="review-text">"İstanbul’dan Antalya’ya tır ile eşya taşıdık. Zamanında teslimat, hasarsız ve profesyonel ekip. Kesinlikle Yılmazlar doğru tercih."</p>
+                <h4>— Mehmet S.</h4>
+            </div>
+            <div class="review-item" data-aos="flip-left" data-aos-delay="100">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="review-text">"Şirketimizin stok transferini yaptırdık, tır nakliye süreci kusursuz. Fiyat performans mükemmel. Herkese öneririm."</p>
+                <h4>— Ayşe K.</h4>
+            </div>
+            <div class="review-item" data-aos="flip-left" data-aos-delay="200">
+                <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="review-text">"Parça eşya taşıması için aradım, çok hızlı dönüş ve uygun fiyat. Eşyalarım tertemiz ulaştı. Teşekkürler!"</p>
+                <h4>— Emre D.</h4>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Süreç -->
+<section class="process" id="process">
+    <div class="container">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Çalışma Sürecimiz</h2>
+        </div>
+        <div class="process-steps">
+            <div class="step" data-aos="fade-up"><div class="step-number">1</div><h3>Teklif & Keşif</h3><p>Ücretsiz keşif ve şeffaf fiyat teklifi</p></div>
+            <div class="step" data-aos="fade-up" data-aos-delay="100"><div class="step-number">2</div><h3>Planlama</h3><p>Size özel rota ve yük planlaması</p></div>
+            <div class="step" data-aos="fade-up" data-aos-delay="200"><div class="step-number">3</div><h3>Profesyonel Yükleme</h3><p>Ekipmanlı tır ve sigortalı yükleme</p></div>
+            <div class="step" data-aos="fade-up" data-aos-delay="300"><div class="step-number">4</div><h3>Teslimat & Memnuniyet</h3><p>Kapıda teslimat ve son kontrol</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+    <div class="container">
+        <div class="section-title" data-aos="fade-up"><h2>Sıkça Sorulan Sorular</h2></div>
+        <div class="faq-container">
+            <div class="faq-item"><div class="faq-question">Şehirler arası nakliye fiyatlarınız nasıl belirleniyor? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">Fiyatlar; mesafe, yük tonajı, eşya hacmi ve ek hizmetlere göre belirlenir. Ücretsiz keşif ile net fiyat sunuyoruz.</div></div>
+            <div class="faq-item"><div class="faq-question">Tır ile nakliye yapıyor musunuz? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">Evet, 15+ tır ve çekici filomuz ile kurumsal ve bireysel tır nakliye hizmeti vermekteyiz.</div></div>
+            <div class="faq-item"><div class="faq-question">Eşyalarım sigortalı mı? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">Tüm taşımalarımız sigorta kapsamındadır. Herhangi bir hasarda tazminat süreci başlatılır.</div></div>
+            <div class="faq-item"><div class="faq-question">Hangi illere hizmet veriyorsunuz? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">Türkiye geneli tüm şehirler arası nakliyat, başta İstanbul, Ankara, İzmir, Bursa, Adana, Antalya.</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- İletişim -->
+<section class="contact" id="contact">
+    <div class="container">
+        <h2 class="section-title" style="color:white;">İletişime Geçin</h2>
+        <div class="contact-row">
+            <div class="contact-card"><i class="fas fa-phone-alt"></i><h3>Telefon</h3><p>0531 102 07 84</p></div>
+            <div class="contact-card"><i class="fab fa-whatsapp"></i><h3>WhatsApp</h3><p>0531 102 07 84</p></div>
+            <div class="contact-card"><i class="fas fa-envelope"></i><h3>E-posta</h3><p>info@yilmazlarnakliye.com</p></div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2025 Yılmazlar Nakliye - Şehirler Arası & Tır Nakliye Firması | Güvenli Taşımacılığın Lideri</p>
+        <p style="margin-top:12px;"><i class="fas fa-map-marker-alt"></i> İstanbul / Türkiye - Yeni Numara: 0531 102 07 84</p>
+    </div>
+</footer>
+
+<!-- Sabit butonlar -->
+<div class="floating-buttons">
+    <a href="https://wa.me/905311020784?text=Merhaba, Yılmazlar Nakliye sitesinden iletişime geçiyorum. Nakliye hizmetleri hakkında bilgi almak istiyorum." target="_blank" class="float-btn" style="position:relative;">
+        <div class="whatsapp-tooltip">Hemen mesaj gönder!</div>
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="tel:05311020784" class="float-btn call"><i class="fas fa-phone"></i></a>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({ duration: 800, once: true, offset: 100 });
+    
+    // Mobil menü
+    const toggleBtn = document.getElementById('mobileNavToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const closeNav = document.getElementById('mobileNavClose');
+    toggleBtn.addEventListener('click', () => mobileNav.classList.add('active'));
+    closeNav.addEventListener('click', () => mobileNav.classList.remove('active'));
+    document.querySelectorAll('.mobile-nav a').forEach(link => link.addEventListener('click', () => mobileNav.classList.remove('active')));
+
+    // Header scroll efekti
+    window.addEventListener('scroll', () => {
+        const header = document.getElementById('mainHeader');
+        if(window.scrollY > 80) header.classList.add('header-scrolled');
+        else header.classList.remove('header-scrolled');
+    });
+    
+    // FAQ accordion
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const questionDiv = item.querySelector('.faq-question');
+        const answerDiv = item.querySelector('.faq-answer');
+        questionDiv.addEventListener('click', () => {
+            const isActive = answerDiv.classList.contains('active');
+            document.querySelectorAll('.faq-answer').forEach(ans => ans.classList.remove('active'));
+            if(!isActive) answerDiv.classList.add('active');
+            else answerDiv.classList.remove('active');
+        });
+    });
+    
+    // yumuşak scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if(href === "#" || href === "") return;
+            const target = document.querySelector(href);
+            if(target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+</body>
+</html>
