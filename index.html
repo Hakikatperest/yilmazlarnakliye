@@ -8,17 +8,12 @@
     <meta name="author" content="Yılmazlar Nakliye">
     <meta name="theme-color" content="#0b2b4a">
     
-    <!-- Open Graph / Social -->
     <meta property="og:title" content="Yılmazlar Nakliye | Şehirler Arası & Tır Nakliye">
     <meta property="og:description" content="Tır filosu ve profesyonel ekiple şehirler arası yük taşımacılığı. Hemen teklif alın!">
     <meta property="og:type" content="website">
     
-    <!-- Font Awesome 6 (CDN) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: modern & dinamik -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- AOS (Animate on Scroll) Hafif kütüphane - wow hissi -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
@@ -29,9 +24,10 @@
         }
 
         :root {
-            --deep-navy: #071b2f;      /* koyu prestij */
-            --dynamic-orange: #f15a24;  /* canlı turuncu (aksans) */
+            --deep-navy: #071b2f;
+            --dynamic-orange: #f15a24;
             --electric-blue: #0077b6;
+            --whatsapp-green: #25D366;
             --bright-accent: #ffb703;
             --light-bg: #f4f7fc;
             --pure-white: #ffffff;
@@ -42,7 +38,6 @@
             --transition-smooth: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
             --gradient-hero: linear-gradient(135deg, #071b2f 0%, #0a2a44 100%);
             --gradient-orange: linear-gradient(115deg, #f15a24 0%, #ff7b3a 100%);
-            --gradient-blue-electric: linear-gradient(135deg, #0077b6, #0096d6);
         }
 
         body {
@@ -63,7 +58,6 @@
             padding: 0 32px;
         }
 
-        /* ===== HEADER (premium glassmorphism) ===== */
         header {
             position: fixed;
             top: 0;
@@ -126,6 +120,7 @@
             background: rgba(255,255,255,0.1);
             border-radius: 40px;
             padding: 8px 16px;
+            z-index: 1101;
         }
         .mobile-nav {
             position: fixed;
@@ -162,7 +157,7 @@
             cursor: pointer;
         }
 
-        /* HERO BÖLÜMÜ - dinamik wow */
+        /* HERO - sola yaslı, logo hizasında */
         .hero {
             min-height: 100vh;
             background: var(--gradient-hero);
@@ -176,15 +171,17 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background: url('https://images.pexels.com/photos/2954911/pexels-photo-2954911.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;
-            opacity: 0.2;
+            background: url('https://images.pexels.com/photos/2973613/pexels-photo-2973613.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover no-repeat;
+            opacity: 0.25;
             mix-blend-mode: overlay;
             pointer-events: none;
         }
         .hero-content {
             position: relative;
             z-index: 2;
-            max-width: 800px;
+            max-width: 750px;
+            margin-left: 0;
+            text-align: left;
         }
         .hero h1 {
             font-size: 4.2rem;
@@ -220,6 +217,24 @@
             border: none;
             cursor: pointer;
         }
+        .btn-call {
+            background: var(--electric-blue);
+            color: white;
+        }
+        .btn-call:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 30px -8px rgba(0,119,182,0.4);
+            background: #0066a0;
+        }
+        .btn-whatsapp {
+            background: var(--whatsapp-green);
+            color: white;
+        }
+        .btn-whatsapp:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 30px -8px rgba(37,211,102,0.4);
+            background: #1da15a;
+        }
         .btn-primary {
             background: var(--gradient-orange);
             color: white;
@@ -228,18 +243,7 @@
             transform: translateY(-4px);
             box-shadow: 0 18px 30px -8px rgba(241,90,36,0.4);
         }
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--bright-accent);
-            color: var(--bright-accent);
-        }
-        .btn-outline:hover {
-            background: var(--bright-accent);
-            color: var(--deep-navy);
-            transform: translateY(-3px);
-        }
 
-        /* bölüm başlıkları */
         .section-title {
             text-align: center;
             margin-bottom: 3.5rem;
@@ -265,7 +269,6 @@
             border-radius: 4px;
         }
         
-        /* Hizmetler - Modern Kartlar (3D hover) */
         .services {
             background: var(--light-bg);
             padding: 100px 0;
@@ -282,7 +285,6 @@
             transition: var(--transition-smooth);
             box-shadow: 0 12px 28px -8px rgba(0,0,0,0.08);
             text-align: center;
-            position: relative;
             border: 1px solid rgba(0,0,0,0.03);
             cursor: pointer;
         }
@@ -314,7 +316,6 @@
             display: inline-block;
         }
 
-        /* Tır filosu özel bölüm */
         .fleet-section {
             background: linear-gradient(110deg, #fef9f0 0%, #ffffff 100%);
             padding: 90px 0;
@@ -354,13 +355,13 @@
         .fleet-img img {
             width: 100%;
             display: block;
-            transition: 0.5s;
         }
 
-        /* Yorumlar (Google) */
+        /* YORUMLAR - Genişletilmiş padding */
         .reviews {
             background: var(--deep-navy);
             color: white;
+            padding: 100px 0;
         }
         .reviews .section-title h2 {
             background: linear-gradient(125deg, #fff, #ffbc6e);
@@ -370,121 +371,36 @@
         }
         .review-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
         .review-item {
-            background: rgba(255,255,255,0.08);
-            backdrop-filter: blur(5px);
-            padding: 1.8rem;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(8px);
+            padding: 2rem;
             border-radius: 28px;
             transition: 0.2s;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        .review-item:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
         }
         .stars {
             color: #FFD966;
             margin-bottom: 1rem;
+            font-size: 1.1rem;
         }
         .review-text {
             font-style: italic;
             margin: 1rem 0;
-            line-height: 1.5;
+            line-height: 1.6;
         }
-        .footer {
-  background: linear-gradient(135deg, #020c16, #071b2f);
-  color: #d1d5db;
-  padding-top: 80px;
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 40px;
-  padding-bottom: 50px;
-}
-
-.footer-logo {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: white;
-}
-
-.footer-logo span {
-  color: #f15a24;
-}
-
-.footer-col h4 {
-  margin-bottom: 15px;
-  color: white;
-  font-size: 1.1rem;
-}
-
-.footer-col p {
-  line-height: 1.6;
-  opacity: 0.8;
-}
-
-.footer-col ul {
-  list-style: none;
-}
-
-.footer-col ul li {
-  margin-bottom: 10px;
-}
-
-.footer-col ul li a {
-  color: #9ca3af;
-  text-decoration: none;
-  transition: 0.2s;
-}
-
-.footer-col ul li a:hover {
-  color: #f15a24;
-  transform: translateX(4px);
-}
-
-.footer-btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 12px 20px;
-  border-radius: 50px;
-  background: linear-gradient(135deg, #f15a24, #ff7b3a);
-  color: white;
-  font-weight: 700;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.footer-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(241,90,36,0.4);
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.08);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 0.9rem;
-  color: #9ca3af;
-}
-        .footer {
-  position: relative;
-}
-
-.footer::before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  left: 50%;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(241,90,36,0.25), transparent);
-  transform: translateX(-50%);
-  filter: blur(80px);
-}
-
-        /* Süreç adımları (animasyon) */
+        .process {
+            padding: 90px 0;
+            background: var(--light-bg);
+        }
         .process-steps {
             display: flex;
             flex-wrap: wrap;
@@ -514,16 +430,15 @@
             margin: 0 auto 1rem;
         }
 
-        /* FAQ Akordiyon modern */
         .faq {
-            background: var(--light-bg);
+            background: var(--pure-white);
+            padding: 90px 0;
         }
         .faq-item {
-            background: white;
+            background: var(--light-bg);
             border-radius: 28px;
             margin-bottom: 1.2rem;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
         }
         .faq-question {
             padding: 1.5rem 2rem;
@@ -546,35 +461,94 @@
             max-height: 260px;
         }
 
-        /* İletişim ve footer */
+        /* İLETİŞİM */
         .contact {
-            background: var(--deep-navy);
+            background: linear-gradient(115deg, #0f2c44 0%, #1a3a55 100%);
             padding: 80px 0;
             text-align: center;
-        }
-        .contact h2 {
             color: white;
+        }
+        .contact .section-title h2 {
+            background: linear-gradient(125deg, #ffffff, #ffbc6e);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
         .contact-row {
             display: flex;
             justify-content: center;
-            gap: 3rem;
+            gap: 2rem;
             flex-wrap: wrap;
             margin-top: 3rem;
+            margin-bottom: 3rem;
         }
         .contact-card {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(12px);
             border-radius: 2rem;
             padding: 1.8rem 2rem;
-            width: 220px;
-            backdrop-filter: blur(8px);
-            transition: 0.2s;
+            width: 240px;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .contact-card:hover {
+            transform: translateY(-8px);
+            background: rgba(255,255,255,0.25);
         }
         .contact-card i {
             font-size: 2.2rem;
             color: var(--bright-accent);
             margin-bottom: 1rem;
         }
+        .contact-card h3 {
+            margin-bottom: 0.8rem;
+        }
+        .contact-form {
+            max-width: 550px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 32px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .contact-form h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.7rem;
+        }
+        .input-group {
+            margin-bottom: 1rem;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border-radius: 50px;
+            border: none;
+            background: rgba(255,255,255,0.9);
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        .contact-form textarea {
+            border-radius: 28px;
+            resize: vertical;
+        }
+        .contact-form button {
+            background: var(--gradient-orange);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+            width: 100%;
+        }
+        .contact-form button:hover {
+            transform: scale(1.02);
+            filter: brightness(1.05);
+        }
+
         footer {
             background: #030e18;
             padding: 40px 0;
@@ -582,7 +556,6 @@
             color: #aaa;
         }
 
-        /* floating butonlar + whatsapp tooltip */
         .floating-buttons {
             position: fixed;
             bottom: 30px;
@@ -605,9 +578,10 @@
             box-shadow: 0 8px 20px rgba(0,0,0,0.2);
             transition: 0.2s;
             text-decoration: none;
+            position: relative;
         }
         .float-btn.call {
-            background: var(--gradient-blue-electric);
+            background: var(--electric-blue);
         }
         .whatsapp-tooltip {
             position: absolute;
@@ -619,8 +593,8 @@
             white-space: nowrap;
             font-weight: 600;
             font-size: 0.85rem;
-            opacity: 1;
             animation: pulse 1.8s infinite;
+            pointer-events: none;
         }
         @keyframes pulse {
             0% { opacity: 0.8; transform: scale(1);}
@@ -634,6 +608,9 @@
             .hero h1 { font-size: 2.5rem; }
             .container { padding: 0 20px; }
             .section-title h2 { font-size: 2rem; }
+            .whatsapp-tooltip { display: none; }
+            .hero-content { text-align: center; margin: 0 auto; }
+            .btn-group { justify-content: center; }
         }
         @media (max-width: 550px) {
             .btn-group { flex-direction: column; width: 100%;}
@@ -673,19 +650,19 @@
     </nav>
 </header>
 
-<!-- Hero Alanı -->
+<!-- Hero - sola yaslı -->
 <section class="hero" id="home">
-    <div class="container hero-content" data-aos="fade-up" data-aos-duration="1000">
+    <div class="container hero-content" data-aos="fade-right" data-aos-duration="1000">
         <h1>Şehirler Arası & Tır Nakliye <br> Profesyonel Çözüm Ortağınız</h1>
-        <p>Yılmazlar Nakliye olarak, modern tır filosu ve uzman ekibimizle Türkiye’nin her noktasına güvenli, hızlı ve ekonomik taşımacılık hizmeti sunuyoruz.</p>
+        <p>Yılmazlar Nakliye olarak, modern tır filosu ve uzman ekibimizle Türkiye'nin her noktasına güvenli, hızlı ve ekonomik taşımacılık hizmeti sunuyoruz.</p>
         <div class="btn-group">
-            <a href="tel:05311020784" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Hemen Ara: 0531 102 07 84</a>
-            <a href="https://wa.me/905311020784?text=Merhaba,%20nakliye%20hizmetiniz%20hakkında%20bilgi%20almak%20istiyorum." class="btn btn-outline" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp'tan Yaz</a>
+            <a href="tel:05311020784" class="btn btn-call"><i class="fas fa-phone-alt"></i> Hemen Ara: 0531 102 07 84</a>
+            <a href="https://wa.me/905311020784?text=Merhaba,%20nakliye%20hizmetiniz%20hakkında%20bilgi%20almak%20istiyorum." class="btn btn-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp'tan Yaz</a>
         </div>
     </div>
 </section>
 
-<!-- Hizmetler (Şehirler Arası & Tır Nakliye vurgulu) -->
+<!-- Hizmetler -->
 <section class="services" id="services">
     <div class="container">
         <div class="section-title" data-aos="fade-up">
@@ -714,12 +691,12 @@
     </div>
 </section>
 
-<!-- Tır filosu özel bölümü -->
+<!-- Tır filosu -->
 <section class="fleet-section" id="fleet">
     <div class="container fleet-showcase">
         <div class="fleet-text" data-aos="fade-right">
             <h3>Yeni Nesil Tır Filosu <i class="fas fa-truck-fast" style="color:#f15a24"></i></h3>
-            <p>10’dan fazla modern çekici ve dorseli aracımızla her türlü yükü güvenle taşıyoruz. Nakliye sürecinizde GPS takip, profesyonel şoför kadrosu ve %100 müşteri memnuniyeti.</p>
+            <p>10'dan fazla modern çekici ve dorseli aracımızla her türlü yükü güvenle taşıyoruz. Nakliye sürecinizde GPS takip, profesyonel şoför kadrosu ve %100 müşteri memnuniyeti.</p>
             <div class="fleet-stats">
                 <div class="stat"><div class="stat-number">15+</div><span>Aktif Tır</span></div>
                 <div class="stat"><div class="stat-number">7/24</div><span>Müşteri Desteği</span></div>
@@ -728,12 +705,12 @@
             <a href="tel:05311020784" class="btn btn-primary"><i class="fas fa-headset"></i> Hemen Teklif Al</a>
         </div>
         <div class="fleet-img" data-aos="fade-left">
-            <img src="https://images.pexels.com/photos/2554697/pexels-photo-2554697.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Yılmazlar Nakliye Tır filosu">
+            <img src="https://images.pexels.com/photos/2954911/pexels-photo-2954911.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Yılmazlar Nakliye Tır filosu">
         </div>
     </div>
 </section>
 
-<!-- Google Yorumları -->
+<!-- Yorumlar - Geniş padding -->
 <section class="reviews" id="reviews">
     <div class="container">
         <div class="section-title" data-aos="fade-up">
@@ -742,7 +719,7 @@
         <div class="review-grid">
             <div class="review-item" data-aos="flip-left">
                 <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                <p class="review-text">"İstanbul’dan Antalya’ya tır ile eşya taşıdık. Zamanında teslimat, hasarsız ve profesyonel ekip. Kesinlikle Yılmazlar doğru tercih."</p>
+                <p class="review-text">"İstanbul'dan Antalya'ya tır ile eşya taşıdık. Zamanında teslimat, hasarsız ve profesyonel ekip. Kesinlikle Yılmazlar doğru tercih."</p>
                 <h4>— Mehmet S.</h4>
             </div>
             <div class="review-item" data-aos="flip-left" data-aos-delay="100">
@@ -787,61 +764,41 @@
     </div>
 </section>
 
-<!-- İletişim -->
+<!-- İletişim + Form WhatsApp yönlendirmeli -->
 <section class="contact" id="contact">
     <div class="container">
-        <h2 class="section-title" style="color:white;">İletişime Geçin</h2>
+        <div class="section-title" data-aos="fade-up">
+            <h2>Bize Ulaşın</h2>
+        </div>
         <div class="contact-row">
             <div class="contact-card"><i class="fas fa-phone-alt"></i><h3>Telefon</h3><p>0531 102 07 84</p></div>
             <div class="contact-card"><i class="fab fa-whatsapp"></i><h3>WhatsApp</h3><p>0531 102 07 84</p></div>
             <div class="contact-card"><i class="fas fa-envelope"></i><h3>E-posta</h3><p>info@yilmazlarnakliye.com</p></div>
         </div>
+        <div class="contact-form" data-aos="fade-up" data-aos-delay="150">
+            <h3>Hızlı Teklif Formu</h3>
+            <form id="quickForm">
+                <div class="input-group">
+                    <input type="text" id="formName" placeholder="Adınız Soyadınız" required>
+                </div>
+                <div class="input-group">
+                    <input type="tel" id="formPhone" placeholder="Telefon Numaranız" required>
+                </div>
+                <div class="input-group">
+                    <textarea id="formMessage" rows="3" placeholder="Nereden nereye? (Örn: İstanbul -> Ankara, eşya cinsi vb.)" required></textarea>
+                </div>
+                <button type="submit"><i class="fab fa-whatsapp"></i> WhatsApp ile Gönder</button>
+            </form>
+            <p style="margin-top: 16px; font-size: 0.8rem;">Formu doldurun, WhatsApp üzerinden size özel teklif gönderelim.</p>
+        </div>
     </div>
 </section>
 
-<footer class="footer">
-  <div class="container footer-grid">
-
-    <!-- Logo & açıklama -->
-    <div class="footer-col">
-      <h3 class="footer-logo">Yılmazlar <span>Nakliye</span></h3>
-      <p>Türkiye geneli şehirler arası ve tır nakliye hizmetlerinde güvenilir çözüm ortağınız.</p>
+<footer>
+    <div class="container">
+        <p>© 2025 Yılmazlar Nakliye - Şehirler Arası & Tır Nakliye Firması | Güvenli Taşımacılığın Lideri</p>
+        <p style="margin-top:12px;"><i class="fas fa-map-marker-alt"></i> İstanbul / Türkiye - Yeni Numara: 0531 102 07 84</p>
     </div>
-
-    <!-- Menü -->
-    <div class="footer-col">
-      <h4>Hızlı Menü</h4>
-      <ul>
-        <li><a href="#services">Hizmetler</a></li>
-        <li><a href="#fleet">Tır Filosu</a></li>
-        <li><a href="#reviews">Yorumlar</a></li>
-        <li><a href="#contact">İletişim</a></li>
-      </ul>
-    </div>
-
-    <!-- Hizmetler -->
-    <div class="footer-col">
-      <h4>Hizmetlerimiz</h4>
-      <ul>
-        <li>Şehirler Arası Nakliye</li>
-        <li>Tır Nakliye</li>
-        <li>Parsiyel Taşıma</li>
-      </ul>
-    </div>
-
-    <!-- CTA -->
-    <div class="footer-col">
-      <h4>Hemen Teklif Al</h4>
-      <a href="tel:05311020784" class="footer-btn">
-        📞 0531 102 07 84
-      </a>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2026 Yılmazlar Nakliye - Tüm hakları saklıdır</p>
-  </div>
 </footer>
 
 <!-- Sabit butonlar -->
@@ -861,8 +818,8 @@
     const toggleBtn = document.getElementById('mobileNavToggle');
     const mobileNav = document.getElementById('mobileNav');
     const closeNav = document.getElementById('mobileNavClose');
-    toggleBtn.addEventListener('click', () => mobileNav.classList.add('active'));
-    closeNav.addEventListener('click', () => mobileNav.classList.remove('active'));
+    if(toggleBtn) toggleBtn.addEventListener('click', () => mobileNav.classList.add('active'));
+    if(closeNav) closeNav.addEventListener('click', () => mobileNav.classList.remove('active'));
     document.querySelectorAll('.mobile-nav a').forEach(link => link.addEventListener('click', () => mobileNav.classList.remove('active')));
 
     // Header scroll efekti
@@ -897,6 +854,29 @@
             }
         });
     });
+
+    // FORM WHATSAPP YÖNLENDİRMESİ
+    const form = document.getElementById('quickForm');
+    if(form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('formName').value.trim();
+            const phone = document.getElementById('formPhone').value.trim();
+            const message = document.getElementById('formMessage').value.trim();
+            
+            if(!name || !phone || !message) {
+                alert('Lütfen tüm alanları doldurun!');
+                return;
+            }
+            
+            const whatsappText = `MERHABA YILMAZLAR NAKLİYE%0A%0A*TEKLİF TALEBİ*%0A%0A👤 İsim: ${encodeURIComponent(name)}%0A📞 Telefon: ${encodeURIComponent(phone)}%0A📦 Talep: ${encodeURIComponent(message)}%0A%0Aİletişime geçilmesini rica ederim.`;
+            const whatsappUrl = `https://wa.me/905311020784?text=${whatsappText}`;
+            window.open(whatsappUrl, '_blank');
+            
+            // Formu temizle
+            form.reset();
+        });
+    }
 </script>
 </body>
 </html>
