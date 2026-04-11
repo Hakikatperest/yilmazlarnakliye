@@ -390,6 +390,99 @@
             margin: 1rem 0;
             line-height: 1.5;
         }
+        .footer {
+  background: linear-gradient(135deg, #020c16, #071b2f);
+  color: #d1d5db;
+  padding-top: 80px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  padding-bottom: 50px;
+}
+
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: white;
+}
+
+.footer-logo span {
+  color: #f15a24;
+}
+
+.footer-col h4 {
+  margin-bottom: 15px;
+  color: white;
+  font-size: 1.1rem;
+}
+
+.footer-col p {
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #9ca3af;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.footer-col ul li a:hover {
+  color: #f15a24;
+  transform: translateX(4px);
+}
+
+.footer-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 20px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #f15a24, #ff7b3a);
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(241,90,36,0.4);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+        .footer {
+  position: relative;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(241,90,36,0.25), transparent);
+  transform: translateX(-50%);
+  filter: blur(80px);
+}
 
         /* Süreç adımları (animasyon) */
         .process-steps {
@@ -706,11 +799,49 @@
     </div>
 </section>
 
-<footer>
-    <div class="container">
-        <p>© 2025 Yılmazlar Nakliye - Şehirler Arası & Tır Nakliye Firması | Güvenli Taşımacılığın Lideri</p>
-        <p style="margin-top:12px;"><i class="fas fa-map-marker-alt"></i> İstanbul / Türkiye - Yeni Numara: 0531 102 07 84</p>
+<footer class="footer">
+  <div class="container footer-grid">
+
+    <!-- Logo & açıklama -->
+    <div class="footer-col">
+      <h3 class="footer-logo">Yılmazlar <span>Nakliye</span></h3>
+      <p>Türkiye geneli şehirler arası ve tır nakliye hizmetlerinde güvenilir çözüm ortağınız.</p>
     </div>
+
+    <!-- Menü -->
+    <div class="footer-col">
+      <h4>Hızlı Menü</h4>
+      <ul>
+        <li><a href="#services">Hizmetler</a></li>
+        <li><a href="#fleet">Tır Filosu</a></li>
+        <li><a href="#reviews">Yorumlar</a></li>
+        <li><a href="#contact">İletişim</a></li>
+      </ul>
+    </div>
+
+    <!-- Hizmetler -->
+    <div class="footer-col">
+      <h4>Hizmetlerimiz</h4>
+      <ul>
+        <li>Şehirler Arası Nakliye</li>
+        <li>Tır Nakliye</li>
+        <li>Parsiyel Taşıma</li>
+      </ul>
+    </div>
+
+    <!-- CTA -->
+    <div class="footer-col">
+      <h4>Hemen Teklif Al</h4>
+      <a href="tel:05311020784" class="footer-btn">
+        📞 0531 102 07 84
+      </a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 Yılmazlar Nakliye - Tüm hakları saklıdır</p>
+  </div>
 </footer>
 
 <!-- Sabit butonlar -->
